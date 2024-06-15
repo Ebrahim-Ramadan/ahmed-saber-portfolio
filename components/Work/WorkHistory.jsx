@@ -16,7 +16,7 @@ export const WorkHistory = () => {
               
               <div
                   key={item.ID}
-                  className='gap-2 flex flex-col bg-black/90 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] col-span-1 rounded-3xl border border-2 border-gray-400 hover:border-white transition duraiton-200 p-4'>
+                  className='gap-2 flex flex-col bg-black/90 bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))] hover:bg-black col-span-1 rounded-3xl border border-2 border-gray-400 hover:border-white transition duraiton-200 p-4'>
               <div 
               className='flex flex-col '>
               <p className='font-bold  text-lg md:text-lg text-[#14A800]'>

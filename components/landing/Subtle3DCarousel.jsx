@@ -82,7 +82,7 @@ export default function Subtle3DCarousel() {
 
 
   return (
-    <div className="relative overflow-hidden p-4 ">
+    <div className="relative overflow-hidden p-4 bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]">
       <motion.div
         className="flex"
         drag="x"
@@ -104,7 +104,7 @@ export default function Subtle3DCarousel() {
         {ITEMS.map((item, index) => (
           <motion.div
             key={index}
-            className="relative flex shrink-0 flex-col items-start justify-between rounded-3xl cursor-grab	 border border-2 border-mauve-light-6/40 bg-black/90 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+            className="relative flex shrink-0 flex-col items-start justify-between rounded-3xl cursor-grab	 border border-2 border-mauve-light-6/40 backdrop-blur-3xl bg-black/10"
             style={{
               width: ITEM_WIDTH,
               height: "100%",

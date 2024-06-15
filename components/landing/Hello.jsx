@@ -15,8 +15,8 @@ export const Hello = () => {
               src='https://avatars.githubusercontent.com/u/171610171?v=4'
               width={200}
               height={200}
-              alt=''
-              className='rounded-full aspect-square w-16 border border-2'
+              alt='pfp'
+              className='rounded-full aspect-square w-16 border border-2  bg-black/80 backdrop-blur-3xl'
       />
       
         <div className='flex flex-col   w-full h-full'>
