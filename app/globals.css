@@ -14,14 +14,9 @@
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
+ html {
     color-scheme: dark only;
   }
-  img {
-    filter: brightness(1.25);
-  }
-}
 
 
 
