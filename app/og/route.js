@@ -6,21 +6,18 @@ export async function GET(request) {
       <img
         width="100%"
               height="100%"
-              style={{
-                  borderRadius:'50%'
-              }}
-        src='/public/og.jpg'
+            
+        src='https://raw.githubusercontent.com/Ebrahim-Ramadan/ahmed-saber-portfolio/main/public/og.jpg'
        
       />
     ),
     {
-      width: 1000,
-      height: 1000,
+      width: 1700,
       headers: {
         'Content-Type': 'image/jpeg',
         'Cache-Control': 'public, max-age=31536000', // cache for 1 year
         'Twitter-Card':'summary_large_image',
-        'Twitter-Image': '/public/og.jpg',
+        'Twitter-Image': 'https://raw.githubusercontent.com/Ebrahim-Ramadan/ahmed-saber-portfolio/main/public/og.jpg',
       },
     },
   );
