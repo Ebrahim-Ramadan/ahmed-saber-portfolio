@@ -104,7 +104,7 @@ export default function Subtle3DCarousel() {
         {ITEMS.map((item, index) => (
           <motion.div
             key={index}
-            className="relative flex shrink-0 flex-col items-start justify-between rounded-3xl border border-2 border-mauve-light-6/40 "
+            className="relative flex shrink-0 flex-col items-start justify-between rounded-3xl cursor-grab	 border border-2 border-mauve-light-6/40 bg-black/90 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
             style={{
               width: ITEM_WIDTH,
               height: "100%",
@@ -135,8 +135,8 @@ export default function Subtle3DCarousel() {
               key={index}
               className={`h-2 w-2 cursor-pointer rounded-full transition-colors duration-150  ${
                 currentIndex === index
-                  ? "bg-slate-50"
-                  : "bg-gray-300"
+                  ? "bg-gray-50"
+                  : "bg-gray-400"
               }`}
               animate={{ scale: currentIndex === index ? 1.2 : 1 }}
               onClick={() => setCurrentIndex(index)}

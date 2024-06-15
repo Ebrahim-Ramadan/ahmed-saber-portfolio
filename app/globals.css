@@ -55,7 +55,19 @@ body::before {
   z-index: -1;
 }
 
-:root {
-  --card-size: 200px;
-  timeline-scope: --list;
+
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff9f;
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0.2);
 }
