@@ -4,6 +4,7 @@ import Subtle3DCarousel from './Subtle3DCarousel';
 import { Upwork, Github, LinkedIn, FB, Separator } from "../globals/Icons";
 import BadgeShine from '../globals/Badge';
 import { WorkHistory } from '../Work/WorkHistory';
+import { Popup } from '../globals/Popup';
 
 export const Hello = () => {
   return (
@@ -11,16 +12,19 @@ export const Hello = () => {
       <div className='flex flex-col gap-4'>
         <div className='flex flex-row gap-2 md:gap-4 items-center justify-center w-full h-full'>
         <Image
-                src='https://avatars.githubusercontent.com/u/171610171?v=4'
-                width={200}
-                height={200}
-                alt=''
-                className='rounded-full h-16 w-16 '
-        />
+              src='https://avatars.githubusercontent.com/u/171610171?v=4'
+              width={200}
+              height={200}
+              alt=''
+              className='rounded-full aspect-square w-16 border border-2'
+      />
+      
         <div className='flex flex-col   w-full h-full'>
           <div className='flex flex-row items-center'>
-<h1 className='text-lg md:text-xl font-bold'>Ahmed Saber</h1>
-          <BadgeShine Badgetext='top 10%' />
+              <h1 className='text-lg md:text-xl font-bold'>Ahmed Saber</h1>
+              <Popup
+               />
+
             
           </div>
           <div className='text-xs md:text-sm [&>*]:leading-none text-gray-300'>

@@ -27,7 +27,7 @@ export const WorkDetails = [
     },
     {
         'ID': 1,
-        'Title': 'Build elevator using Arduino and hall effect sensor',
+        'Title': 'Build elevator (Arduino and hall effect sensor)',
         'Review': '"His collaboration on the Arduino elevator project was nothing short of extraordinary. His innovative ideas and hands-on expertise were key factors in bringing our vision to life"',
         'Date': 'January 2, 2024 - January 26, 2024',
         
