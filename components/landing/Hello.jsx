@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Subtle3DCarousel from './Subtle3DCarousel';
 import { Upwork, Github, LinkedIn, FB } from "../globals/Icons";
+import BadgeShine from '../globals/Badge';
 
 export const Hello = () => {
   return (
@@ -34,7 +35,7 @@ Ahmed Saber
         </div>
      </div>
         <div className='flex flex-row items-center justify-end w-full h-full px-4 gap-2'>
-          <Upwork  className='w-6 h-6'/>
+          <BadgeShine Badgetext='top 1%' />
           <Github className='w-6 h-6'/>
           <LinkedIn  className='w-6 h-6'/>
           <FB className='w-6 h-6'/>

@@ -1,8 +1,9 @@
 'use client';
 
-import { PanInfo, motion, useMotionValue, useTransform } from "framer-motion";
+import { useRotateYValues } from "@/utils/customHooks";
+import { motion, useMotionValue } from "framer-motion";
 import { useState } from "react";
-import { AI, BehanceIcon, Bot, Circuits, Code, Cube, Github } from "../globals/Icons";
+import { AI, Bot, Circuits, Code, Cube } from "../globals/Icons";
 
 const ITEMS = [
   {
@@ -46,33 +47,19 @@ const ITEMS = [
     id: 5,
   },
 ];
-
 const ITEM_WIDTH = 200;
 const DRAG_BUFFER = 50;
 const VELOCITY_THRESHOLD = 500;
 const GAP = 16;
 const CONTAINER_WIDTH = ITEM_WIDTH + GAP;
+
 const SPRING_OPTIONS = {
   type: "spring",
   stiffness: 300,
   damping: 30,
 };
 
-function useRotations(x, length) {
-  return Array.from({ length }, (_, index) => {
-    const range = [
-      (-100 * (index + 1) * CONTAINER_WIDTH) / 100,
-      (-100 * index * CONTAINER_WIDTH) / 100,
-      (-100 * (index - 1) * CONTAINER_WIDTH) / 100,
-    ];
-    const nextIndex = Math.min(index + 1, length - 1);
-    const prevIndex = Math.max(index - 1, 0);
-    const outputRange = [nextIndex ? 90 : 90, 0, prevIndex ? -90 : -90];
-    return useTransform(x, range, outputRange, {
-      clamp: false,
-    });
-  });
-}
+
 
 export default function Subtle3DCarousel() {
   const x = useMotionValue(0);
@@ -91,10 +78,11 @@ export default function Subtle3DCarousel() {
 
   const leftConstraint = -((ITEM_WIDTH + GAP) * (ITEMS.length - 1));
 
-  const rotations = useRotations(x, ITEMS.length);
+  const rotateYValues = useRotateYValues(x, ITEMS, ITEM_WIDTH, GAP);
+
 
   return (
-    <div className="w-fit relative overflow-hidden rounded-[var(--outer-r)] p-4">
+    <div className="relative overflow-hidden rounded-[var(--outer-r)] border border-mauve-light-6/40 p-[var(--p-distance)] [--p-distance:16px] [--outer-r:24px] dark:border-mauve-dark-6/60">
       <motion.div
         className="flex"
         drag="x"
@@ -116,11 +104,11 @@ export default function Subtle3DCarousel() {
         {ITEMS.map((item, index) => (
           <motion.div
             key={index}
-            className="relative flex shrink-0 flex-col items-start justify-between rounded-3xl border border-2 border-mauve-light-6/40 bg-mauve-light-1 dark:border-mauve-dark-6/60 dark:bg-mauve-dark-1"
+            className="relative flex shrink-0 flex-col items-start justify-between rounded-[calc(var(--outer-r)-var(--p-distance))] border border-mauve-light-6/40 bg-mauve-light-1 dark:border-mauve-dark-6/60 dark:bg-mauve-dark-1"
             style={{
               width: ITEM_WIDTH,
               height: "100%",
-              rotateY: rotations[index],
+              rotateY: rotateYValues[index],
             }}
             transition={SPRING_OPTIONS}
           >
@@ -147,8 +135,8 @@ export default function Subtle3DCarousel() {
               key={index}
               className={`h-2 w-2 cursor-pointer rounded-full transition-colors duration-150  ${
                 currentIndex === index
-                  ? "bg-slate-50"
-                  : "bg-gray-400"
+                  ? "bg-mauve-light-9 dark:bg-mauve-dark-9"
+                  : "bg-mauve-light-9/40 dark:bg-mauve-dark-9/40"
               }`}
               animate={{ scale: currentIndex === index ? 1.2 : 1 }}
               onClick={() => setCurrentIndex(index)}
