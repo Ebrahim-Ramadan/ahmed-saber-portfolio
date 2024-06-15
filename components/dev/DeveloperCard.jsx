@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import { useRef, useState } from "react";
-import dev from '@/assets/dev.webp';
+import dev from '@/public/dev.webp';
 
 export const DeveloperCard = () => {
   const divRef = useRef(null);
