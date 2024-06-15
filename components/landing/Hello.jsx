@@ -34,7 +34,7 @@ Ahmed Saber
           </div>
         </div>
      </div>
-        <div className='flex flex-row items-center justify-end w-full h-full px-4 gap-2'>
+        <div className='flex flex-row items-center justify-end w-full h-full px-4 gap-2 [&>*]:cursor-pointer'>
           <BadgeShine Badgetext='top 1%' />
           <Github className='w-6 h-6'/>
           <LinkedIn  className='w-6 h-6'/>

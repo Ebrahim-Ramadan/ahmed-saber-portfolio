@@ -82,7 +82,7 @@ export default function Subtle3DCarousel() {
 
 
   return (
-    <div className="relative overflow-hidden rounded-[var(--outer-r)] border border-mauve-light-6/40 p-[var(--p-distance)] [--p-distance:16px] [--outer-r:24px] dark:border-mauve-dark-6/60">
+    <div className="relative overflow-hidden p-4 ">
       <motion.div
         className="flex"
         drag="x"
@@ -104,7 +104,7 @@ export default function Subtle3DCarousel() {
         {ITEMS.map((item, index) => (
           <motion.div
             key={index}
-            className="relative flex shrink-0 flex-col items-start justify-between rounded-[calc(var(--outer-r)-var(--p-distance))] border border-mauve-light-6/40 bg-mauve-light-1 dark:border-mauve-dark-6/60 dark:bg-mauve-dark-1"
+            className="relative flex shrink-0 flex-col items-start justify-between rounded-3xl border border-2 border-mauve-light-6/40 "
             style={{
               width: ITEM_WIDTH,
               height: "100%",
@@ -135,8 +135,8 @@ export default function Subtle3DCarousel() {
               key={index}
               className={`h-2 w-2 cursor-pointer rounded-full transition-colors duration-150  ${
                 currentIndex === index
-                  ? "bg-mauve-light-9 dark:bg-mauve-dark-9"
-                  : "bg-mauve-light-9/40 dark:bg-mauve-dark-9/40"
+                  ? "bg-slate-50"
+                  : "bg-gray-300"
               }`}
               animate={{ scale: currentIndex === index ? 1.2 : 1 }}
               onClick={() => setCurrentIndex(index)}
