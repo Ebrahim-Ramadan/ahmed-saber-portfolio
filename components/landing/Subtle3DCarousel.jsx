@@ -58,6 +58,21 @@ const SPRING_OPTIONS = {
   damping: 30,
 };
 
+function useRotations(x, length) {
+  return Array.from({ length }, (_, index) => {
+    const range = [
+      (-100 * (index + 1) * CONTAINER_WIDTH) / 100,
+      (-100 * index * CONTAINER_WIDTH) / 100,
+      (-100 * (index - 1) * CONTAINER_WIDTH) / 100,
+    ];
+    const nextIndex = Math.min(index + 1, length - 1);
+    const prevIndex = Math.max(index - 1, 0);
+    const outputRange = [nextIndex ? 90 : 90, 0, prevIndex ? -90 : -90];
+    return useTransform(x, range, outputRange, {
+      clamp: false,
+    });
+  });
+}
 
 export default function Subtle3DCarousel() {
   const x = useMotionValue(0);
@@ -75,6 +90,8 @@ export default function Subtle3DCarousel() {
   };
 
   const leftConstraint = -((ITEM_WIDTH + GAP) * (ITEMS.length - 1));
+
+  const rotations = useRotations(x, ITEMS.length);
 
   return (
     <div className="w-fit relative overflow-hidden rounded-[var(--outer-r)] p-4">
@@ -96,46 +113,32 @@ export default function Subtle3DCarousel() {
         animate={{ x: -(currentIndex * (ITEM_WIDTH + GAP)) }}
         transition={SPRING_OPTIONS}
       >
-        {ITEMS.map((item, index) => {
-          const range = [
-            (-100 * (index + 1) * CONTAINER_WIDTH) / 100,
-            (-100 * index * CONTAINER_WIDTH) / 100,
-            (-100 * (index - 1) * CONTAINER_WIDTH) / 100,
-          ];
-          const nextIndex = Math.min(index + 1, ITEMS.length - 1);
-          const prevIndex = Math.max(index - 1, 0);
-          const outputRange = [nextIndex ? 90 : 90, 0, prevIndex ? -90 : -90];
-          const rotateY = useTransform(x, range, outputRange, {
-            clamp: false,
-          });
-
-          return (
-            <motion.div
-              key={index}
-              className="relative flex shrink-0 flex-col items-start justify-between rounded-3xl border border-2 border-mauve-light-6/40 bg-mauve-light-1 dark:border-mauve-dark-6/60 dark:bg-mauve-dark-1"
-              style={{
-                width: ITEM_WIDTH,
-                height: "100%",
-                rotateY: rotateY,
-              }}
-              transition={SPRING_OPTIONS}
-            >
-              <div className="mb-4 px-5 pt-5">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-mauve-light-3 dark:bg-mauve-dark-3">
-                  {item.icon}
-                </span>
+        {ITEMS.map((item, index) => (
+          <motion.div
+            key={index}
+            className="relative flex shrink-0 flex-col items-start justify-between rounded-3xl border border-2 border-mauve-light-6/40 bg-mauve-light-1 dark:border-mauve-dark-6/60 dark:bg-mauve-dark-1"
+            style={{
+              width: ITEM_WIDTH,
+              height: "100%",
+              rotateY: rotations[index],
+            }}
+            transition={SPRING_OPTIONS}
+          >
+            <div className="mb-4 px-5 pt-5">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-mauve-light-3 dark:bg-mauve-dark-3">
+                {item.icon}
+              </span>
+            </div>
+            <div className="px-5 pb-5">
+              <div className="mb-1 text-sm font-medium text-mauve-light-12 dark:text-mauve-dark-12">
+                {item.title}
               </div>
-              <div className="px-5 pb-5">
-                <div className="mb-1 text-sm font-medium text-mauve-light-12 dark:text-mauve-dark-12">
-                  {item.title}
-                </div>
-                <p className="text-sm text-mauve-light-11 dark:text-mauve-dark-11">
-                  {item.description}
-                </p>
-              </div>
-            </motion.div>
-          );
-        })}
+              <p className="text-sm text-mauve-light-11 dark:text-mauve-dark-11">
+                {item.description}
+              </p>
+            </div>
+          </motion.div>
+        ))}
       </motion.div>
       <div className="flex w-full justify-center">
         <div className="mt-4 flex w-[150px] justify-between px-8">
