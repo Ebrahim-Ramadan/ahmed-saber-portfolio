@@ -5,6 +5,7 @@ import { Upwork, Github, LinkedIn, FB, Separator } from "../globals/Icons";
 import BadgeShine from '../globals/Badge';
 import { WorkHistory } from '../Work/WorkHistory';
 import { Popup } from '../globals/Popup';
+// import { TabsComponent } from './TabsComponent';
 
 export const Hello = () => {
   return (
@@ -48,6 +49,7 @@ export const Hello = () => {
           <FB className='w-6 h-6'/>
        </div>
       </div>
+      {/* <TabsComponent/> */}
       <div className='flex flex-col   w-full h-full'>
           <p className='font-medium '>About Me</p>
           <p className='text-xs md:text-sm [&>*]:leading-none text-gray-300'>

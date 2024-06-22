@@ -87,11 +87,10 @@ Total earnings
 Total jobs
 </div>
               </div>
-              <BadgeShine >
-              <div className="flex flex-row items-center justify-center w-full">
-                  <JobSuccess />
+              <BadgeShine className="flex flex-row items-center justify-center w-full mb-4">
+              <JobSuccess />
                   <p className="text-xs text-gray-200"> <span className="text-base md:text-lg font-bold ">100%</span> Job Success</p>
-              </div>
+           
               </BadgeShine>
            
             </motion.div>
