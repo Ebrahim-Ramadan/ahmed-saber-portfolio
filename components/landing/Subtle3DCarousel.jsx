@@ -3,9 +3,10 @@
 import { useRotateYValues } from "@/utils/customHooks";
 import { motion, useMotionValue } from "framer-motion";
 import { useState } from "react";
-import { AI, Bot, Circuits, Code, Cube } from "../globals/Icons";
+import { AI, Circuits, Gears, Code, Cube, Bot } from "../globals/Icons";
 
 const ITEMS = [
+ 
   {
     title: "Project Management",
     description: "Comprehensive oversight from concept to delivery.",
@@ -82,7 +83,7 @@ export default function Subtle3DCarousel() {
 
 
   return (
-    <div className="relative overflow-hidden p-4 bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]">
+    <div className="relative overflow-hidden p-4 ">
       <motion.div
         className="flex"
         drag="x"
@@ -113,7 +114,7 @@ export default function Subtle3DCarousel() {
             transition={SPRING_OPTIONS}
           >
             <div className="mb-4 px-5 pt-5">
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-mauve-light-3 dark:bg-mauve-dark-3">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-black/10">
                 {item.icon}
               </span>
             </div>

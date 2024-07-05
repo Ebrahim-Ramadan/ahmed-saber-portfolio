@@ -13,7 +13,7 @@ export const LazyLoad = ({ children }) => {
           observer.disconnect();
         }
       },
-      { rootMargin: '100px' } //the root margin
+      { rootMargin: '10px' } //the root margin
     );
 
     if (ref.current) {

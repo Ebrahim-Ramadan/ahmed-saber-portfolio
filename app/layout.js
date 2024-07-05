@@ -1,6 +1,6 @@
 
 import { GeistSans } from 'geist/font/sans';
-
+import { ViewTransitions } from 'next-view-transitions'
 import "./globals.css";
 
 
@@ -8,26 +8,23 @@ import "./globals.css";
 
 export const metadata = {
   title: "Ahmed Saber",
-  description: "Robotics Engineer portfolio",
+  description: "  Robotics Engineer with a robust foundation in AI and IoT portfolio",
   openGraph: {
      images: ['https://avatars.githubusercontent.com/u/171610171?v=4'],
     title: 'Ahmed Saber',
-    description: 'Robotics Engineer portfolio',
+    description: '  Robotics Engineer with a robust foundation in AI and IoT portfolio',
   },
   title: {
-    default: 'Ahmed Saber',
+    default: 'Ahmed Saber | software blogs',
     template: `%s - Ahmed Saber`,
   },
   keywords: [
     "Ahmed Saber",
     "software engineer",
-    "robotics engineer",
-    "IoT",
-    "AI",
-    "upwork top 10",
+    "  Robotics Engineer with a robust foundation in AI and IoT",
   ],
   description: 'Ahmed Saber',
-  creator: "Sharmo, Eldisha",
+  creator: "Sharmo",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -61,9 +58,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={GeistSans  .className}>
-        {children}</body>
+    <ViewTransitions>
+<html lang="en">
+        <body className={GeistSans.className}>
+        
+          {children}
+        </body>
     </html>
+    </ViewTransitions>
+    
   );
 }
