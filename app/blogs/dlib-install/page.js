@@ -1,9 +1,12 @@
-import { DlibInstallation } from "@/blogs/DlibInstallation/DlibInstallation";
+
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { getMdxContent } from "@/utils/serveMDX";
 
 export default async function Home() {
-    return (
-        <DlibInstallation/>
+    const { content, frontmatter } = getMdxContent("DlibInstallation.mdx");
 
+    return (
+        <MDXRemote source={content} />
         )
 }
 export const metadata = {

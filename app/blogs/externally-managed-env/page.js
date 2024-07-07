@@ -3,54 +3,54 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { getMdxContent } from "@/utils/serveMDX";
 
 export default async function Home() {
-    const { content, frontmatter } = getMdxContent("FaceRecognitionModule.mdx");
+    const { content, frontmatter } = getMdxContent("ExternallyManagedEnv.mdx");
 
     return (
         <MDXRemote source={content} />
         )
 }
 export const metadata = {
-    title: "Face recognition module",
-    description: "Face recognition module",
+    title: "Externally managed env",
+    description: "Externally managed env",
     openGraph: {
         images: ['https://avatars.githubusercontent.com/u/65041082?s=400&u=cb58112cd92067eb53afe77fc7beb1573aab869d&v=4'],
-        title: 'Face recognition module',
-        description: 'Face recognition module',
+        title: 'Externally managed env',
+        description: 'Externally managed env',
     },
     title: {
-        default: 'Face recognition module',
-        template: `%s - Face recognition module`,
+        default: 'Externally managed env',
+        template: `%s - Externally managed env`,
     }, 
     keywords: [
-        "Ebrahim Ramadan",
+        "Ahmed Saber",
         "software engineer",
         "frontend engineer",
         "software blogs",
-        "Face recognition module",
+        "Externally managed env",
         "large file storage",
     ],
-    description: 'Face recognition module',
+    description: 'Externally managed env',
     creator: "Sharmo",
     openGraph: {
         type: "website",
         locale: "en_US",
         url: 'https://ebrahim-ramadan.vercel.app/',
-        title: 'Face recognition module',
-        description: ' Face recognition module',
-        siteName: 'Face recognition module',
+        title: 'Externally managed env',
+        description: ' Externally managed env',
+        siteName: 'Externally managed env',
         images: [
             {
                 url: 'https://ebrahim-ramadan.vercel.app/og',
                 width: 1200,
                 height: 630,
-                alt: 'Face recognition module',
+                alt: 'Externally managed env',
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: 'Face recognition module',
-        description: 'Face recognition module',
+        title: 'Externally managed env',
+        description: 'Externally managed env',
         images: 'https://ebrahim-ramadan.vercel.app/og',
         creator: "@scoopsahoykid",
     },
