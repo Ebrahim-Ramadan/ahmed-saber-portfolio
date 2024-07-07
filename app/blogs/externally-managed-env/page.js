@@ -1,12 +1,23 @@
 
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getMdxContent } from "@/utils/serveMDX";
+import { Suspense } from "react";
+import { BlogHeader } from "@/blogs/Blog";
 
 export default async function Home() {
     const { content, frontmatter } = getMdxContent("ExternallyManagedEnv.mdx");
 
     return (
+        <div className="mx-auto mb-14 w-full max-w-screen-sm flex-1 p-4 md:p-24 space-y-8 flex min-h-screen flex-col items-center">
+        <BlogHeader
+        title='Externally Managed Environment'
+        desc='so much erros with this'
+        imgPath='/Blogs/dlib.png'
+        />
+<Suspense  fallback={<div>Loading...</div>}>
         <MDXRemote source={content} />
+    </Suspense>
+    </div>
         )
 }
 export const metadata = {
