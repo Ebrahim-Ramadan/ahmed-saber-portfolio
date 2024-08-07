@@ -1,26 +1,14 @@
+import { DBlibInstallation } from "@/blogs/DBlibInstallation"
 
-import { MDXRemote } from "next-mdx-remote/rsc";
-import { getMdxContent } from "@/utils/serveMDX";
-import { Suspense } from "react";
-import { BlogHeader } from "@/blogs/Blog";
 
 export default async function Home() {
-    const { content, frontmatter } = getMdxContent("DlibInstallation.mdx");
+
 
     return (
-        <div className="mx-auto mb-14 w-full max-w-screen-sm flex-1 p-4 md:p-24 space-y-8 flex min-h-screen flex-col items-center">
-            <BlogHeader
-            title='Dlib Installation with OpenCV'
-            desc='install dlib with the pain'
-            imgPath='/Blogs/dlib.png'
-            />
-<Suspense  fallback={<div>Loading...</div>}>
-            <MDXRemote source={content} />
-        </Suspense>
-        </div>
-        
+      <DBlibInstallation/>
         )
 }
+
 export const metadata = {
     title: "Dlib Installation with OpenCV",
     description: "Dlib Installation with OpenCV and how cool it is",

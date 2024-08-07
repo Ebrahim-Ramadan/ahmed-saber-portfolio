@@ -22,11 +22,7 @@ export const Redirects = [
     <Blog />, URL:'/blogs'
     },
     {
-        id: 3, text:'Channel',icon:
-    <Youtube />, URL:'https://www.youtube.com/@sharmojj'
-    },
-    {
         id: 3, text:'Resume',icon:
-    <Resume />, URL:'https://drive.google.com/file/d/1PZT7XO83HSmS2X5BmTjWntBAc7lTf9M1/view'
+    <Resume />, URL:'https://drive.google.com/file/d/1F2Scmz87xNTrHW62iOj-0Dx-ukNfRBj3/view?usp=drivesdk'
     },
 ]

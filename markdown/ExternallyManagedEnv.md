@@ -33,4 +33,3 @@ sudo mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MA
 ```
 
 After running the above command, you can attempt to install your packages again.
-
